@@ -3,8 +3,8 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    QUIZ_AUTHOR = 'quiz author'
-    PLAYER = 'player'
+    QUIZ_AUTHOR = 'Quiz author'
+    PLAYER = 'Player'
 
     ROLE_OF_USER_CHOICES = (
         (QUIZ_AUTHOR, 'Quiz author'),
