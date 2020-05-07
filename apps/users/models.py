@@ -1,3 +1,21 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
-# Create your models here.
+
+class User(AbstractUser):
+    QUIZ_AUTHOR = 'quiz author'
+    PLAYER = 'player'
+
+    ROLE_OF_USER_CHOICES = (
+        (QUIZ_AUTHOR, 'Quiz author'),
+        (PLAYER, 'Player'),
+    )
+    role = models.CharField(max_length=15, choices=ROLE_OF_USER_CHOICES, default=False)
+
+    def __str__(self):
+        return f'{self.username}'
+
+
+
+
+
